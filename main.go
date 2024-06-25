@@ -9,12 +9,22 @@ import (
 )
 
 func main() {
+
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		// Switch on the requested URL path
 		switch r.URL.Path {
 		case "/":
 			
-			server.HandleHome(w, r) // Handle the root path by calling the HandleHome function
+			if r.Method == http.MethodPost{
+				server.HandlePostRequest(w,r)
+			}else{
+				http.ServeFile(w, r, "templates/index.html") // Serve the index.html file located in the templates directory
+			}
+
+		
+				
+
 		default:
 			
 			http.NotFound(w, r) // Respond with a 404 Not Found status for all other paths

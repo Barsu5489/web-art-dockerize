@@ -5,6 +5,6 @@ import (
 	"net/http"
 )
 
-func HandleHome(w http.ResponseWriter, r *http.Request){
-	fmt.Fprint(w, "Welcome")
+func HandlePostRequest(w http.ResponseWriter, r *http.Request){
+	fmt.Fprint(w, "Welco")
 }
