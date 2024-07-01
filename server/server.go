@@ -52,16 +52,14 @@ func HandlePostRequest(w http.ResponseWriter, r *http.Request) {
 									<label for="shadow">shadow</label>
 								</div>
 								<input type="submit"
-									class="h-auto w-48 border py-2 px-4 text-center rounded-lg bg-blue-500 text-white"
+									class="h-auto w-48 border py-2 px-4 text-center rounded-lg bg-blue-500 text-white hover:bg-blue-600 hover:text-white cursor-pointer"
 									value="Create art">
 							</div>
 						</form>
 					</div>
 				</div>
-				<div>
 					<h4><strong>Generated Art: </strong></h4>
 					<pre>{{.Data}}</pre>
-				</div>
 				<footer class="bg-white rounded-lg m-4 sticky bottom-0">
 					<span class="block text-sm text-gray-500 text-center dark:text-gray-400">© 2024 <a href="/"
 							class="hover:underline">Ascii Art Web™</a>. All Rights Reserved.</span>
@@ -89,8 +87,9 @@ func HandlePostRequest(w http.ResponseWriter, r *http.Request) {
 	res = art.GenArt(userInput, bannerFile)
 	if res == "" {
 		artOutput = Result{
-			Data: "Bad Request",
+			Data: "400 Bad Request",
 		}
+		w.WriteHeader(http.StatusBadRequest)
 
 	} else {
 		artOutput = Result{
