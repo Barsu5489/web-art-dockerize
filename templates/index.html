@@ -10,19 +10,23 @@
 
     <header> header</header>
     <main>
-        <form action="" method="post">
+        <form action="/" method="post">
             <label for="text" >text input</label>
             <textarea name="text" id="text" cols="30" rows="10"></textarea>
 
-            <input type="radio" name="banner" id="standard" >
+            <input type="radio" name="banner" id="standard" value="standard.txt">
             <label for="standard">standard</label>
-            <input type="radio" name="banner" id="thinkertoy" >
+            <input type="radio" name="banner" id="thinkertoy" value="thinkertoy.txt">
             <label for="thinkertoy">thinkertoy</label>
-            <input type="radio" name="banner" id="shadow" >
+            <input type="radio" name="banner" id="shadow" value="shadow.txt">
             <label for="shadow">shadow</label>
             <input type="submit" value="Create art">
         </form>
     </main>
+
+    <pre>
+        {{ .Data}}
+    </pre>
     <footer>Footer</footer>
 </body>
 </html>

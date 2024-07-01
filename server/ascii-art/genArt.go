@@ -12,15 +12,14 @@ import (
 )
 
 func GenArt(userInput, banner string) string {
-
 	asciiArt := ""
-	
+
 	userInput = ascii.HandleBackspace(userInput)
 	userInput = strings.ReplaceAll(string(userInput), "\\t", "   ") // handling the tab sequence
 
 	// Read the ascii art text file
-	
-	filename := "server/ascii-art/" + banner + ".txt"
+
+	filename := "server/ascii-art/" + banner
 	file, err := os.ReadFile(filename)
 	if err != nil {
 		fmt.Println(err)
@@ -55,5 +54,5 @@ func GenArt(userInput, banner string) string {
 			asciiArt += "\n" // printing a new line after printing each line of the charcter
 		}
 	}
-	return asciiArt 
+	return asciiArt
 }
