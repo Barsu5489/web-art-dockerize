@@ -22,8 +22,7 @@ func GenArt(userInput, banner string) string {
 	filename := "server/ascii-art/" + banner
 	file, err := os.ReadFile(filename)
 	if err != nil {
-		fmt.Println(err)
-		return ""
+		return "500"
 	}
 
 	//
