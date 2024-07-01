@@ -85,6 +85,10 @@ func HandlePostRequest(w http.ResponseWriter, r *http.Request) {
 	}
 
 	res = art.GenArt(userInput, bannerFile)
+	if res == "500" {
+		res = "500 Internal Server Error"
+		w.WriteHeader(http.StatusInternalServerError)
+	}
 	if res == "" {
 		artOutput = Result{
 			Data: "400 Bad Request",
