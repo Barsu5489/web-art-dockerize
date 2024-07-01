@@ -36,6 +36,7 @@ func GenArt(userInput, banner string) string {
 	}
 
 	userInput = strings.ReplaceAll(userInput, "\\n", "\n")
+	userInput = strings.ReplaceAll(userInput, "\r", "\n")
 	userInputParts, err := ascii.HandleNewLine(userInput)
 	ascii.ErrHandler(err)
 
