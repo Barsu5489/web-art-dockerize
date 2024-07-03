@@ -34,7 +34,7 @@ func HandlePostRequest(w http.ResponseWriter, r *http.Request) {
 						<form action="/" method="post" class="w-full">
 							<textarea id="message" rows="4" cols="80"
 								class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-								placeholder="Enter your text here..." name="text" id="text"></textarea>
+								placeholder="Enter your text here..." name="text" id="text" required></textarea>
 							<div class="flex flex-col my-6">
 								<p class="text-gray-600">Choose banner file you want to use.</p>
 								<div class="flex items-center text-gray-600 py-2">
@@ -74,15 +74,15 @@ func HandlePostRequest(w http.ResponseWriter, r *http.Request) {
 	userInput := r.FormValue("text")
 	bannerFile := r.FormValue("banner")
 
-	if userInput == "" {
-		artOutput = Result{
-			Data: "User Input Cannot Be Empty.",
-		}
-		tpl, _ := template.Must(template.ParseFiles("templates/index.html")).Parse(pageData)
+	// if userInput == "" {
+	// 	artOutput = Result{
+	// 		Data: "User Input Cannot Be Empty.",
+	// 	}
+	// 	tpl, _ := template.Must(template.ParseFiles("templates/index.html")).Parse(pageData)
 
-		tpl.Execute(w, artOutput)
-		return
-	}
+	// 	tpl.Execute(w, artOutput)
+	// 	return
+	// }
 
 	res = art.GenArt(userInput, bannerFile)
 	if res == "500" {
