@@ -74,16 +74,6 @@ func HandlePostRequest(w http.ResponseWriter, r *http.Request) {
 	userInput := r.FormValue("text")
 	bannerFile := r.FormValue("banner")
 
-	// if userInput == "" {
-	// 	artOutput = Result{
-	// 		Data: "User Input Cannot Be Empty.",
-	// 	}
-	// 	tpl, _ := template.Must(template.ParseFiles("templates/index.html")).Parse(pageData)
-
-	// 	tpl.Execute(w, artOutput)
-	// 	return
-	// }
-
 	res = art.GenArt(userInput, bannerFile)
 	if res == "500" {
 		res = "500 Internal Server Error"
