@@ -25,6 +25,8 @@ func checkFileExists(filePath string) bool {
 func main() {
 	indexFilePath := "templates/index.html"
 
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+
 	// Check if the index.html file exists
 	if !checkFileExists(indexFilePath) {
 		log.Fatalf("File %s does not exist.", indexFilePath)
