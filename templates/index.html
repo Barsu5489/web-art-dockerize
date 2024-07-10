@@ -4,46 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="./static/styles.css">
     <title>Ascii Art Web</title>
 </head>
 
-<body>
-    <div>
-        <div>
+<body class="bg-gray">
+    <div class="container margin-x-auto pd-6">
+        <div class="flex flex-col h-screen justify-between">
             <div>
-                <h1>Ascii Art Web</h1>
-                <hr>
-                <div>
-                    <form action="/" method="post" class="w-full">
+                <h1 class="text-gray text-size-l">Ascii Art Web</h1>
+                <div class="flex margin-y-6">
+                    <form action="/" method="post" class="width-full">
                         <textarea id="message" rows="4" cols="80"
+                            class="block  width-full text-sm text-gray bg-gray rounded border border-gray"
                             placeholder="Enter your text here..." name="text" id="text" required></textarea>
-                        <div>
-                            <p><strong>Choose a banner file.</strong></p>
-                            <div>
+                        <div class="flex flex-col margin-y-6">
+                            <p class="text-gray"><strong>Choose a banner file.</strong></p>
+                            <div class="flex items-center text-gray py-2">
                                 <input type="radio" name="banner" id="standard" value="standard.txt" checked
                                     class="mr-2">
                                 <label for="standard">standard</label>
                             </div>
-                            <div>
-                                <input type="radio" name="banner" id="thinkertoy" value="thinkertoy.txt"
-                                    class="mr-2">
+                            <div class="flex items-center text-gray-600 py-2">
+                                <input type="radio" name="banner" id="thinkertoy" value="thinkertoy.txt" class="mr-2">
                                 <label for="thinkertoy">thinkertoy</label>
                             </div>
-                            <div>
+                            <div class="flex items-center text-gray-600 py-2">
                                 <input type="radio" name="banner" id="shadow" value="shadow.txt" class="mr-2">
                                 <label for="shadow">shadow</label>
                             </div>
                             <input type="submit"
+                                class="h-auto w-48 border py-2 px-4 text-center rounded bg-blue-500 text-white  cursor-pointer"
                                 value="Create art">
                         </div>
                     </form>
                 </div>
             </div>
-            <footer>
-                <span >© 2024 <a href="/"
-                      >Ascii Art Web™</a>. All Rights Reserved.</span>
+            <footer class="rounded-lg m-4 sticky bottom-0">
+                <span class="block text-sm text-gray-500 text-center">© 2024 <a href="/"
+                        class="hover:underline">Ascii Art Web™</a>. All Rights Reserved.</span>
             </footer>
         </div>
     </div>
