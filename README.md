@@ -1,10 +1,10 @@
-# Ascii Art Web
+# Ascii Art Web Style
 
 Ascii Art Web is a web application that generates ASCII art representations based on user input and chosen banner styles.
 
 ## Description
 
-Ascii Art Web is a simple web application built with Go (Golang) that allows users to input text and select from predefined banner styles to generate ASCII art. It processes the user input, handles special characters, and displays the ASCII art output using HTML and Tailwind CSS.
+Ascii Art Web style is a simple web application built with Go (Golang) that allows users to input text and select from predefined banner styles to generate ASCII art. It processes the user input, handles special characters, and displays the ASCII art output using HTML and Custom CSS.
 
 
 
@@ -15,8 +15,8 @@ To run the project locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-   git clone https://learn.zone01kisumu.ke/git/abrakingoo/ascii-art-web.git
-   cd ascii-art-web
+   git https://learn.zone01kisumu.ke/git/ebarsula/ascii-art-web-stylize.git
+   cd ascii-art-web-stylize
 ```
 
 2. Start the server on port 8080:
@@ -58,7 +58,7 @@ http://localhost:8080/
 <br>
 <br>
 
-This application is a basic implementation of ASCII art generation using Go and Tailwind CSS, <br>suitable for educational purposes or as a starting point for more complex ASCII art applications.
+This application is a basic implementation of ASCII art generation using Go and Custom CSS, <br>suitable for educational purposes or as a starting point for more complex ASCII art applications.
 
 ### Authors
 <table>
