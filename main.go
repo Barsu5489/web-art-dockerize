@@ -53,6 +53,7 @@ func main() {
 			w.WriteHeader(http.StatusNotFound)
 
 			tpl.Execute(w, nil)
+
 		}
 	})
 
