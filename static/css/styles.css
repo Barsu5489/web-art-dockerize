@@ -30,7 +30,7 @@ body {
 }
 
 .space {
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .header p {
@@ -39,10 +39,35 @@ body {
     font-size: large;
 }
 
+pre {
+    width: 100%;
+    min-height: 100px;
+    background: #eee;
+    padding: 20px;
+    overflow: scroll;
+    /* overflow-x: scroll; */
+}
+textarea {
+    padding: 5px;
+    font-size: 18px;
+    outline: none;
+    
+}
+
+textarea::placeholder {
+    font-style: italic;
+    font-size: 18px;
+}
 /* Media size for different screens */
 @media (min-width: 320px) {
     .container {
         max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    pre {
+        left: 0;
     }
 }
 
@@ -165,7 +190,7 @@ footer {
     width: 100%;
     bottom: 0;
     left: 0;
-    position: fixed;
+    /* position: fixed; */
     
 
 }
