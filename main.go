@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -40,12 +41,19 @@ func main() {
 			if r.Method == http.MethodPost {
 				server.HandlePostRequest(w, r)
 			} else {
-				http.ServeFile(w, r, "templates/index.html") // Serve the index.html file located in the templates directory
+				// Serve the index.html file located in the templates directory
+				tpl, _ := template.ParseFiles("templates/index.html")
+
+				tpl.Execute(w, nil)
 			}
 
 		default:
+			// Respond with a 404 Not Found status for all other paths
+			tpl, _ := template.ParseFiles("templates/404.html")
+			w.WriteHeader(http.StatusNotFound)
 
-			http.NotFound(w, r) // Respond with a 404 Not Found status for all other paths
+			tpl.Execute(w, nil)
+
 		}
 	})
 

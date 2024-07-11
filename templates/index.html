@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
     <title>Ascii Art Web</title>
 </head>
 
@@ -18,7 +18,7 @@
         <div class="flex flex-col h-screen justify-between">
             <div class="space">
                 <div class="flex margin-y-6">
-                    <form action="/" method="post" class="width-full">
+                    <form action="/" method="POST" class="width-full">
                         <textarea id="message" rows="4" cols="80"
                             class="block  width-full text-sm text-gray bg-gray rounded border border-gray"
                             placeholder="Enter your text here..." name="text" id="text" required></textarea>
@@ -39,44 +39,61 @@
                             </div>
                             <input type="submit"
                                 class="h-auto w-48 border py-2 px-4 text-center rounded bg-blue-500 text-white  cursor-pointer"
-                                value="Create art">
+                                value="Generate art">
                         </div>
                     </form>
                 </div>
+                <div>
+                    {{ if .Data }}
+                    <h4>Generated art:</h4>
+                    <pre>{{.Data}}</pre>
+                    {{ end }}
+                </div>
             </div>
-        
         </div>
         <footer class="rounded-lg m-4 sticky bottom-0">
             <table>
                 <tr>
-                    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+                    <td style="word-wrap: break-word; width: 150.0; height: 150.0">
                         <a href=https://learn.zone01kisumu.ke/git/aaochieng>
-                            <img src=https://learn.zone01kisumu.ke/git/avatars/8a1b24358854eb12998a07c269542193?size=870 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Aaron/>
+                            <img src=https://learn.zone01kisumu.ke/git/avatars/8a1b24358854eb12998a07c269542193?
+                                size=870
+                                width="100;"
+                                style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px"
+                                alt=Aaron />
                             <br />
                             <sub style="font-size:17px; color: black;"><b>Beginner Developer</b></sub> <br>
                             <sub style="font-size:14px; color: black;"><b>Aoron Ochieng</b></sub>
                         </a>
                     </td>
-                    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+                    <td style="word-wrap: break-word; width: 150.0; height: 150.0">
                         <a href=https://learn.zone01kisumu.ke/git/ebarsula>
-                            <img src=https://learn.zone01kisumu.ke/git/avatars/fa966ef34b0ccdfe772414745aeee49f?size=870 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Emmanuel/>
+                            <img src=https://learn.zone01kisumu.ke/git/avatars/fa966ef34b0ccdfe772414745aeee49f?
+                                size=870
+                                width="100;"
+                                style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px"
+                                alt=Emmanuel />
                             <br />
                             <sub style="font-size:17px; color: black;"><b>Beginner Developer</b></sub>
                             <sub style="font-size:14px; color: black;"><b>Emmanuel Barsulai</b></sub>
                         </a>
-                    </td>
-                    <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
+                    </td> 
+                    <td style="word-wrap: break-word; width: 150.0; height: 150.0">
                         <a href=https://learn.zone01kisumu.ke/git/abrakingoo>
-                            <img src=https://learn.zone01kisumu.ke/git/avatars/c307852c0cb9222c1ea2c71f98ff2d51?size=870 width="100;"  style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px" alt=Abraham/>
+                            <img src=https://learn.zone01kisumu.ke/git/avatars/c307852c0cb9222c1ea2c71f98ff2d51?
+                                size=870
+                                width="100;"
+                                style="border-radius:50%;align-items:center;justify-content:center;overflow:hidden;padding-top:10px"
+                                alt=Abraham />
                             <br />
                             <sub style="font-size:17px; color: black;"><b>Beginner Developer</b></sub>
                             <sub style="font-size:14px; color: black;"><b>Abraham kingoo</b></sub>
                         </a>
                     </td>
                 </tr>
-                </table>    <br><br>
-            <span class="block text-sm text-gray-500 text-center">© 2024 <a href="/"
-                    class="hover:underline"  style="font-size:14px; color: black;">Ascii Style™</a>. All Rights Reserved.</span>
+            </table> <br><br>
+            <span class="block text-sm text-gray-500 text-center">© 2024 <a href="/" class="hover:underline"
+                    style="font-size:14px; color: black;">Ascii Style™</a>. All Rights Reserved.</span>
         </footer>
     </div>
 </body>
