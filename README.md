@@ -1,66 +1,60 @@
-# Ascii Art Web Style
+# Ascii Art Web Dockerize
 
-Ascii Art Web is a web application that generates ASCII art representations based on user input and chosen banner styles.
+Ascii Art Web dockerize is a golang web application that converts an input text to generate an ASCII  via web browser based on the three banner files provided in this project.
 
-## Description
-
-Ascii Art Web style is a simple web application built with Go (Golang) that allows users to input text and select from predefined banner styles to generate ASCII art. It processes the user input, handles special characters, and displays the ASCII art output using HTML and Custom CSS.
+The project further utilized `docker image` and `engine` to run the project based on a `docker file` to create a `docker image` to run the project.
 
 
 
-## Usage: How to Run
+## Prerequisites
 
-To run the project locally, follow these steps:
+Make sure you have Docker installed on your system. If not follow the instructions provided on [dockers official website](https://docs.docker.com/engine/install) to install it according to the system that you have.
 
-1. Clone the repository:
+
+
+## Installation and setup
+
+1. Clone this repository
 
 ```bash
-   git https://learn.zone01kisumu.ke/git/ebarsula/ascii-art-web-stylize.git
-   cd ascii-art-web-stylize
+git clone https://learn.zone01kisumu.ke/git/abrakingoo/ascii-art-web-dockerize.git
+cd ascii-art-web-dockerize
 ```
 
-2. Start the server on port 8080:
+2. Building the docker image
 
-```
-go run .
-```
-3. Open your web browser and navigate to:
-
-```
-http://localhost:8080/
-
+```bash
+docker build . -t ascii-art-web-dockerize:latest
 ```
 
-4. Enter your text in the textarea, choose a banner style, and click "Create art" to generate ASCII art based on your input.
+`.` means to build a docker container based on the `docker configuration`  in the current directory.
 
-# Implementation Details: Algorithm
-- The core functionality of Ascii-art-Web involves converting user-provided text into ASCII art. Here's an overview of the implementation:
+`-t` means `tag` or the name we've given the container supposed to be built.
 
-### 1. Server Setup:
 
-- The application runs a web server using Go's net/http package.
 
-#### 2. Handling Requests:
+3. Running the container
 
-- GET /: Serves the index.html file located in the templates directory.
-- POST /: Processes form submissions containing user input for generating ASCII art.
+```bash
+docker run -p 80:8080 ascii-art-web-dockerize:latest
+```
 
-#### 3. ASCII Art Generation:
+`docker run`: Starts a new container.
 
-- Reads ASCII character representations from files (standard.txt, thinkertoy.txt, shadow.txt).
-- Processes user input to handle special characters like newline (\n) and tab (\t).
-- Generates ASCII art by mapping characters to their respective ASCII representations.
+`-p 80:8080`: Maps port 80 on your computer to port 8080 inside the container.
 
-#### 4. Error Handling:
+`ascii-art-web-dockerize:latest`: Uses the specified Docker image (with the latest version) to create the container.
 
-- Checks for empty ASCII art files (standard.txt, thinkertoy.txt, shadow.txt).
-- Handles issues related to newline characters in the input string.
-<br>
-<br>
+4. Open your prefered browser and enter `http://localhost` to view the application
 
-This application is a basic implementation of ASCII art generation using Go and Custom CSS, <br>suitable for educational purposes or as a starting point for more complex ASCII art applications.
+```bash
+http://localhost
+```
+
+Enter your text in the textarea, choose a banner style, and click "Createart" to generate ASCII art based on your input.
 
 ### Authors
+
 <table>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
@@ -87,8 +81,8 @@ This application is a basic implementation of ASCII art generation using Go and 
 </tr>
 </table>
 
-## License 
+## License
+
 © 2024 Ascii Art Web™. All Rights Reserved.
 
 This README.md file provides a clear overview of our project, including its purpose, how to run it, <br> details about the ASCII art generation algorithm, and credits to the authors.<br> Adjust the URLs and details as per your specific project setup and preferences.
-
