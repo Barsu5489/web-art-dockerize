@@ -1,10 +1,10 @@
 package asciiweb
 
 import (
-	"html/template"
-	"net/http"
-	"log"
 	art "asciiweb/server/ascii-art"
+	"html/template"
+	"log"
+	"net/http"
 )
 
 type Result struct {
@@ -48,4 +48,3 @@ func HandlePostRequest(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "500 Internal Server Error: Unable to execute template", http.StatusInternalServerError)
 	}
 }
-
