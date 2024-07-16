@@ -2,7 +2,7 @@
 FROM golang:1.22.3
 
 # Metadata as labels
-LABEL maintainer="Emmanuel Barsulai <your_email@example.com>, Aaron Ochieng <mail>, Abraham Kingoo <maikoabraham68@gmail.com>"
+LABEL maintainer="Emmanuel Barsulai <ebarsulai@gmail.com>, Aaron Ochieng <ochiengaoron@gmail.com>, Abraham Kingoo <maikoabraham68@gmail.com>"
 LABEL version="1.0"
 LABEL description="A simple Go HTTP server serving HTML."
 

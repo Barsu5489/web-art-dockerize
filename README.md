@@ -4,13 +4,9 @@ Ascii Art Web dockerize is a golang web application that converts an input text 
 
 The project further utilized `docker image` and `engine` to run the project based on a `docker file` to create a `docker image` to run the project.
 
-
-
 ## Prerequisites
 
 Make sure you have Docker installed on your system. If not follow the instructions provided on [dockers official website](https://docs.docker.com/engine/install) to install it according to the system that you have.
-
-
 
 ## Installation and setup
 
@@ -31,8 +27,6 @@ docker build . -t ascii-art-web-dockerize:latest
 
 `-t` means `tag` or the name we've given the container supposed to be built.
 
-
-
 3. Running the container
 
 ```bash
@@ -49,6 +43,30 @@ docker run -p 80:8080 ascii-art-web-dockerize:latest
 
 ```bash
 http://localhost
+```
+
+**Alternatively**
+
+Alternatively withing the project a bash script named `builder.sh` has been created to automate the process faster.
+
+To execute the script run :
+
+```bash
+sh builder.sh
+```
+
+The builder script also runs on a different port as opposed to the earlier one.
+
+```textile
+http://localhost:8080
+```
+
+**Cleaning up**
+
+To cleanup the created docker containers creted run `cleaner.sh` script to automate the process.
+
+```bash
+sh cleaner.sh
 ```
 
 Enter your text in the textarea, choose a banner style, and click "Createart" to generate ASCII art based on your input.
@@ -84,5 +102,3 @@ Enter your text in the textarea, choose a banner style, and click "Createart" to
 ## License
 
 © 2024 Ascii Art Web™. All Rights Reserved.
-
-This README.md file provides a clear overview of our project, including its purpose, how to run it, <br> details about the ASCII art generation algorithm, and credits to the authors.<br> Adjust the URLs and details as per your specific project setup and preferences.
